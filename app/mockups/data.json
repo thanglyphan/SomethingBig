@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "store": "H/M",
+      "title": "Høstens beste salg!",
+      "shortDescription":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "description":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "priceMeter": "299 - 1000 kr",
+      "dateFrom": "08/04/2018",
+      "dateTo": "10/04/2018",
+      "timeFrom": "08.00",
+      "timeTo": "16.00",
+      "location": {
+        "adr": "Drammensveien 130, Oslo, Norway",
+        "lat": 59.9128056,
+        "long": 10.7438524
+      },
+      "category": 0,
+      "price": "100 - 9999kr"
+    },
+    {
+      "store": "Tiger of Sweeden",
+      "title": "Høstens beste salg!",
+      "shortDescription":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "description":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "priceMeter": "299 - 1000 kr",
+      "dateFrom": "08/04/2018",
+      "dateTo": "08/04/2018",
+      "timeFrom": "08.00",
+      "timeTo": "16.00",
+      "location": {
+        "adr": "Drammensveien 130, Oslo, Norway",
+        "lat": 59.9122896,
+        "long": 10.7492558
+      },
+      "category": 1,
+      "price": "100 - 399kr"
+    },
+    {
+      "store": "VOLT",
+      "title": "Høstens beste salg!",
+      "shortDescription":
+        "Våre spesial designede varer passer for alle store og små! Med størrelse S, M, L og XL!",
+      "description":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "priceMeter": "299 - 1000 kr",
+      "dateFrom": "01/04/2018",
+      "dateTo": "10/06/2018",
+      "timeFrom": "08.00",
+      "timeTo": "16.00",
+      "location": {
+        "adr": "Drammensveien 130, Oslo, Norway",
+        "lat": 59.9146975,
+        "long": 10.7281906
+      },
+      "category": 0,
+      "price": "100 - 200kr"
+    },
+    {
+      "store": "H/M",
+      "title": "Høstens beste salg!",
+      "shortDescription":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "description":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "priceMeter": "299 - 1000 kr",
+      "dateFrom": "01/04/2018",
+      "dateTo": "10/06/2018",
+      "timeFrom": "08.00",
+      "timeTo": "16.00",
+      "location": {
+        "adr": "Drammensveien 130, Oslo, Norway",
+        "lat": 59.9131276,
+        "long": 10.7375841
+      },
+      "category": 0,
+      "price": "100 - 399kr"
+    },
+    {
+      "store": "Cubus",
+      "title": "Høstens beste salg!",
+      "shortDescription":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "description":
+        "Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt! Vi har vareprøver for alle barn og voksne, kom å ta en titt!",
+      "priceMeter": "299 - 1000 kr",
+      "dateFrom": "01/05/2018",
+      "dateTo": "30/05/2018",
+      "timeFrom": "08.00",
+      "timeTo": "16.00",
+      "location": {
+        "adr": "Drammensveien 130, Oslo, Norway",
+        "lat": 59.9627454,
+        "long": 10.9040917
+      },
+      "category": 0,
+      "price": "100 - 399kr"
+    }
+  ]
+}
