@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
-import {
-  ScrollView,
-  Text,
-  View,
-  Button,
-  Image,
-  TouchableHighlight
-} from 'react-native'
+import { connect } from 'react-redux'
+import { ScrollView, Text, View, TouchableHighlight } from 'react-native'
 import {
   styles,
   txtHeader,
@@ -22,15 +16,15 @@ import {
   DateMonth,
   Today,
   Category,
-  Distance
+  Distance,
+  DateNames
 } from '../../../mockups/DataConverter'
+import { event } from '../../../actions/event'
 import Icon from 'react-native-vector-icons/Ionicons'
-
 class EventCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      color: randomColor(),
       radius: props.sectionId == 0 ? 7 : 0
     }
   }
@@ -50,7 +44,7 @@ class EventCard extends Component {
   }
 
   today = () => {
-    return Today(this.props.data.dateFrom, this.props.data.dateTo)
+    return DateNames[Today(this.props.data.dateFrom, this.props.data.dateTo)]
   }
 
   time = isFrom => {
@@ -72,7 +66,7 @@ class EventCard extends Component {
   redText = () => {
     return {
       ...styles.text,
-      color: this.state.color,
+      color: this.props.color,
       opacity: 0.9
     }
   }
@@ -101,12 +95,24 @@ class EventCard extends Component {
     })
   }
 
+  navigateOnClick = () => {
+    const { navigate } = this.props.navigation
+    var data = {
+      data: this.props.data,
+      color: this.props.color
+    }
+    this.props.onEvent(data)
+    navigate('DetailedEvent')
+  }
+
   render() {
     return (
       <View
         style={[
           wrapperStyle(this.state.radius),
-          { borderLeftColor: this.state.color }
+          {
+            borderLeftColor: this.props.color
+          }
         ]}
       >
         <View style={styles.leftContent}>
@@ -139,12 +145,12 @@ class EventCard extends Component {
               <View
                 style={[
                   styles.stripledLine,
-                  { borderLeftColor: this.state.color }
+                  { borderLeftColor: this.props.color }
                 ]}
               />
             </View>
             <View style={[styles.rightContentHeaderBox]}>
-              <View style={styles.contentBox}>
+              <View style={[styles.contentBox]}>
                 {textAppender(txtHeader, this.store(), 20, 20)}
               </View>
               <View style={seperator}>
@@ -153,7 +159,7 @@ class EventCard extends Component {
                   style={location}
                   onPress={() => this.navigate()}
                 >
-                  {textAppender(txtPrimary, this.location(false), 13, 13)}
+                  {textAppender(txtPrimary, this.location(), 13, 13)}
                 </TouchableHighlight>
               </View>
             </View>
@@ -163,11 +169,15 @@ class EventCard extends Component {
               style={[styles.contentBox, { alignItems: 'flex-start', flex: 2 }]}
             >
               <View style={styles.rightContentLeftBox} />
-              <View style={[styles.rightContentHeaderBox]}>
+              <TouchableHighlight
+                underlayColor={null}
+                style={[styles.rightContentHeaderBox]}
+                onPress={() => this.navigateOnClick()}
+              >
                 <View style={styles.contentBox}>
                   {textAppender(txtPrimary, this.introText(), 15, 15)}
                 </View>
-              </View>
+              </TouchableHighlight>
             </View>
             <View style={[styles.contentBoxWithSpacing]}>
               <View style={[styles.textBox]}>
@@ -180,7 +190,7 @@ class EventCard extends Component {
               </View>
               <View style={[styles.textBox]}>
                 {textAppender(styles.text, 'AVSTAND', 20, 20)}
-                {textAppender(styles.text, this.distance(), 15, 15)}
+                {textAppender(styles.text, this.distance() + ' KM', 15, 15)}
               </View>
             </View>
           </View>
@@ -191,12 +201,6 @@ class EventCard extends Component {
 }
 const logo = require('../../../mockups/images/logo.png')
 
-const randomColor = () => {
-  const max = color.eventCard.length
-  const rand = Math.floor(Math.random() * max)
-  return color.eventCard[rand]
-}
-
 const textAppender = (style, text, size, lineHeight) => {
   return (
     <Text style={[style, { fontSize: size, lineHeight: lineHeight }]}>
@@ -204,4 +208,19 @@ const textAppender = (style, text, size, lineHeight) => {
     </Text>
   )
 }
-export default EventCard
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    event: state.event.event
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onEvent: data => {
+      dispatch(event(data))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventCard)

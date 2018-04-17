@@ -51,7 +51,6 @@ class Map extends Component {
       )
       let respJson = await resp.json()
       let points = Polyline.decode(respJson.routes[0].overview_polyline.points)
-      console.log(points)
       let coords = points.map((point, index) => {
         return {
           latitude: point[0],
@@ -65,7 +64,6 @@ class Map extends Component {
   }
 
   render() {
-    console.log(this.state.coords)
     return (
       <View style={{ flex: 1 }}>
         <MapView

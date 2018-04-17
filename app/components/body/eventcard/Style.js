@@ -5,16 +5,15 @@ const { height, width } = Dimensions.get('window')
 
 export const styles = {
   wrapper: {
-    height: 180,
+    height: 165,
     width: window.width,
-    marginHorizontal: 10,
-    overflow: 'hidden',
+    marginHorizontal: 8,
     backgroundColor: '#FFF',
     borderLeftWidth: 7,
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
-    marginBottom: 4
+    marginBottom: 5
   },
   leftContent: {
     display: 'flex',
@@ -34,6 +33,15 @@ export const styles = {
   },
   rightContentHeaderBox: {
     flex: 15
+  },
+  shadow: {
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 0
+    },
+    shadowRadius: 5,
+    shadowOpacity: 0.3
   },
   contentBox: {
     flex: 1,
@@ -78,12 +86,13 @@ export const txtHeader = {
 export const txtPrimary = {
   ...styles.text,
   fontFamily: font.primary,
-  opacity: 0.9
+  opacity: 1
 }
 
 export const wrapperStyle = radius => {
   return {
     ...styles.wrapper,
+    ...styles.shadow,
     borderTopLeftRadius: radius
   }
 }

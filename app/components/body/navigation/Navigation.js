@@ -3,7 +3,7 @@ import { Animated, Easing } from 'react-native'
 
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import Main from '../main/Main'
-
+import DetailedEvent from '../detailedevent/DetailedEvent'
 import Map from '../map/Map'
 import Splash from '../../start/Splash/Splash'
 
@@ -20,7 +20,7 @@ const fade = props => {
   const translateY = 0
 
   const opacity = position.interpolate({
-    inputRange: [index - 0.9, index, index + 0.9],
+    inputRange: [index - 1, index, index + 1],
     outputRange: [0.3, 1, 0.3]
   })
 
@@ -32,9 +32,10 @@ const fade = props => {
 
 const Navigation = StackNavigator(
   {
-    // Splash: { screen: Splash },
-    // Map: { screen: Map },
-    Main: { screen: Main }
+    Splash: { screen: Splash },
+    Map: { screen: Map },
+    Main: { screen: Main },
+    DetailedEvent: { screen: DetailedEvent }
   },
   {
     animationEnabled: false,
