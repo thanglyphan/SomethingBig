@@ -1,7 +1,4 @@
-import { StyleSheet, Dimensions, Platform } from 'react-native'
-import font from '../../../assets/font'
-import color from '../../../assets/color'
-const { height, width } = Dimensions.get('window')
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -14,10 +11,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   map: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: -50
+    flex: 1
+  },
+  icon: {
+    height: 25,
+    width: 25
   }
 })

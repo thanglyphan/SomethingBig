@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native'
 import setup from './app/setup'
 
-AppRegistry.registerComponent('SomethingBig', () => setup())
+AppRegistry.registerComponent('ToiletService', () => setup())

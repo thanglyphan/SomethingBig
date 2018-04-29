@@ -1,18 +1,13 @@
 const defaultState = {
-  region: {
-    latitude: 0,
-    longitude: 0,
-    latitudeDelta: 0,
-    longitudeDelta: 0
-  }
+  toilet: {}
 }
 
 export default function reducer(state = defaultState, action) {
   switch (action.type) {
-    case 'LOCATION':
+    case 'TOILET':
       return {
         ...state,
-        region: action.region
+        toilet: action.toilet
       }
     default:
       return state

@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
-import { Animated, Easing } from 'react-native'
-
+import { Animated } from 'react-native'
 import { StackNavigator, TabNavigator } from 'react-navigation'
 import Main from '../main/Main'
-import DetailedEvent from '../detailedevent/DetailedEvent'
 import Map from '../map/Map'
-import Splash from '../../start/Splash/Splash'
-
 import Header from '../header/Header'
 
 const state = {
-  fadeAnim: new Animated.Value(0) // Initial value for opacity: 0
+  fadeAnim: new Animated.Value(0)
 }
 
 const fade = props => {
@@ -32,10 +28,8 @@ const fade = props => {
 
 const Navigation = StackNavigator(
   {
-    Splash: { screen: Splash },
     Map: { screen: Map },
-    Main: { screen: Main },
-    DetailedEvent: { screen: DetailedEvent }
+    Main: { screen: Main }
   },
   {
     animationEnabled: false,

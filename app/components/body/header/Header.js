@@ -11,41 +11,48 @@ import {
 import { maincontrol } from '../../../actions/maincontrol'
 import color from '../../../assets/color'
 import { styles } from './Style'
+import { LanguageHeader } from '../../../assets/language'
 
 class Header extends Component {
   toggleScreen = screenId => {
     var isMain = screenId == 'Main' ? true : false
-    console.log(isMain)
     this.props.maincontrol(isMain)
-    // console.log(this.props.isMain)
-
     this.props.navigate.navigate(screenId)
+  }
+
+  addBorderLine = showLine => {
+    return showLine
+      ? {
+          borderBottomWidth: 5,
+          borderColor: color.toiletCard[2]
+        }
+      : {}
   }
 
   render() {
     return (
       <View style={styles.wrapper}>
-        <View style={styles.upper} />
         <View style={styles.lower}>
           <View style={styles.left} />
           <View style={styles.middle}>
-            <TouchableHighlight onPress={() => this.toggleScreen('Map')}>
-              <Text style={styles.text}>Kart</Text>
+            <TouchableHighlight
+              underlayColor={'transparent'}
+              style={[styles.btn, this.addBorderLine(!this.props.isMain)]}
+              onPress={() => this.toggleScreen('Map')}
+              disabled={!this.props.isMain}
+            >
+              <Text style={styles.text}>{LanguageHeader.headerMap}</Text>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.toggleScreen('Main')}>
-              <Text style={styles.text}>Salg</Text>
+            <TouchableHighlight
+              underlayColor={'transparent'}
+              style={[styles.btn, this.addBorderLine(this.props.isMain)]}
+              onPress={() => this.toggleScreen('Main')}
+              disabled={this.props.isMain}
+            >
+              <Text style={styles.text}>{LanguageHeader.headerToilets}</Text>
             </TouchableHighlight>
           </View>
-          <View style={styles.right}>
-            {this.props.isMain && (
-              <TouchableHighlight onPress={() => console.log('yo')}>
-                <Image
-                  source={require('../../../assets/images/unlocked.png')}
-                  style={styles.img}
-                />
-              </TouchableHighlight>
-            )}
-          </View>
+          <View style={styles.right} />
         </View>
       </View>
     )

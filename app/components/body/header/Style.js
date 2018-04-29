@@ -1,6 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native'
-import { HeaderHeight, MarginTop } from '../../../mockups/HeaderHeight'
-import color from '../../../assets/color'
+import { HeaderHeight, MarginTop } from '../../../assets/HeaderHeight'
 import font from '../../../assets/font'
 
 export const styles = {
@@ -10,10 +9,17 @@ export const styles = {
     left: 0,
     right: 0,
     height: HeaderHeight,
-    backgroundColor: color.eventCard[3],
+    backgroundColor: 'transparent',
     paddingBottom: 10,
     display: 'flex',
     flexDirection: 'column'
+  },
+  gradient: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: HeaderHeight * 2
   },
   upper: {
     display: 'flex',
@@ -28,7 +34,7 @@ export const styles = {
     flex: 1
   },
   middle: {
-    flex: 1,
+    flex: 5,
     flexDirection: 'row',
     alignItems: 'flex-end',
     justifyContent: 'space-between'
@@ -43,10 +49,15 @@ export const styles = {
   text: {
     fontFamily: font.primaryRegular,
     color: '#FFF',
-    fontSize: 20
+    fontSize: 25
   },
   img: {
     height: 25,
     width: 25
+  },
+  btn: {
+    flex: 1,
+    alignItems: 'center',
+    marginHorizontal: 10
   }
 }
